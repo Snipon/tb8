@@ -7,8 +7,10 @@
         :key="index"
         :class="`resident resident--${resident.type}`"
       >
-        <font-awesome-icon :icon="resident.type" />
-        <span class="resident__name">{{resident.name}}</span>
+        <a :href="`mailto:${resident.email}`">
+          <font-awesome-icon :icon="resident.type" />
+          <span class="resident__name">{{resident.name}}</span>
+        </a>
       </div>
     </div>
   </div>
@@ -16,10 +18,10 @@
 
 <script>
 const residents = [
-  { name: "Simon", type: "male" },
-  { name: "Ditte-Marie", type: "female" },
-  { name: "Severin", type: "child" },
-  { name: "Karla", type: "baby" }
+  { name: "Simon", type: "male", email: "simon@tb8.dk" },
+  { name: "Ditte-Marie", type: "female", email: "ditte@tb8.dk" },
+  { name: "Severin", type: "child", email: "severin@tb8.dk" },
+  { name: "Karla", type: "baby", email: "karla@tb8.dk" }
 ];
 export default {
   name: "FrontPage",
@@ -35,7 +37,7 @@ export default {
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(white, palegreen, white);
+  background: radial-gradient(white, silver);
   background-size: cover;
 }
 
@@ -52,6 +54,11 @@ export default {
   transition: transform 350ms ease;
   text-align: center;
   line-height: 1;
+}
+
+.resident a {
+  color: inherit;
+  text-decoration: none !important;
 }
 
 .resident:hover {

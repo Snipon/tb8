@@ -3,19 +3,19 @@
     <h1>Tjørnebakken 8</h1>
     <div class="residents">
       <div
-        v-for="(member, index) in members"
+        v-for="(resident, index) in residents"
         :key="index"
-        :class="`resident resident--${member.type}`"
+        :class="`resident resident--${resident.type}`"
       >
-        <font-awesome-icon :icon="member.type" />
-        <span class="resident__name">{{member.name}}</span>
+        <font-awesome-icon :icon="resident.type" />
+        <span class="resident__name">{{resident.name}}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-const members = [
+const residents = [
   { name: "Simon", type: "male" },
   { name: "Ditte-Marie", type: "female" },
   { name: "Severin", type: "child" },
@@ -23,7 +23,7 @@ const members = [
 ];
 export default {
   name: "FrontPage",
-  data: () => ({ members })
+  data: () => ({ residents })
 };
 </script>
 
@@ -35,7 +35,7 @@ export default {
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(white, silver);
+  background: radial-gradient(white, palegreen, white);
   background-size: cover;
 }
 

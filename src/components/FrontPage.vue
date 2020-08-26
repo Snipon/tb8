@@ -13,10 +13,13 @@
         </a>
       </div>
     </div>
+    <Weather></Weather>
   </div>
 </template>
 
 <script>
+import Weather from "@/components/Weather";
+
 const residents = [
   { name: "Simon", type: "male", email: "simon@tb8.dk" },
   { name: "Ditte-Marie", type: "female", email: "ditte@tb8.dk" },
@@ -25,6 +28,7 @@ const residents = [
 ];
 export default {
   name: "FrontPage",
+  components: {Weather},
   data: () => ({ residents })
 };
 </script>
